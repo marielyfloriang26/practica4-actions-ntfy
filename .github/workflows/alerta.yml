@@ -1,0 +1,25 @@
+name: Notificacion CI - DevOps 
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notificar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del codigo
+        uses: actions/checkout@v4
+
+      - name: Ejecutar Hola Mundo
+        run: node index.js
+
+      - name: Enviar notificacion a ntfy.sh
+        run: |
+          curl -H "Title: Pipeline Exitoso" \
+               -H "Priority: urgent" \
+               -H "Tags: white_check_mark,computer" \
+               -d "El codigo ha sido subido a la rama main. ¡El Hola Mundo se ejecuto correctamente!" \
+               https://ntfy.sh/devops-mf
