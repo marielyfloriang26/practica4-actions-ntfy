@@ -20,6 +20,6 @@ jobs:
         run: |
           curl -H "Title: Pipeline Exitoso" \
                -H "Priority: urgent" \
-               -H "Tags: white_check_mark,computer" \
-               -d "El codigo ha sido subido a la rama main. MF" \
+               -H "Tags: white_check_mark" \
+               -d "El codigo ha sido subido a la rama main. Mariely Florian" \
                https://ntfy.sh/devops-itla
